@@ -1,5 +1,7 @@
-![alt text](images/header.png "Every Happy Yelper")
 >"All happy families are alike; each unhappy family is unhappy in its own way" - Leo Tolstoy, _Anna Karenina_
+
+![alt text](images/header.png "Every Happy Yelper")
+
 
 # Objective
 <img src="images/tolstoy.png"><p>
@@ -15,11 +17,18 @@ For balance, I supplemented this list with 264 shuttered restaurants, arriving a
 
 <img src="images/reviews.png">
 
+# EDA and problem ideation
+As part of our initial EDA we clean and stem the reviews and run <a href="https://radimrehurek.com/gensim/models/ldamodel.html">Gensim's LDA model</a> on the entire corpus. LDA stands for Latent Dirichlet Allocation. This is a soft topic model that allows for each document in the corpus to belong to multiple topics.
+<p>
+At this point, I was not sure where the project was heading, and I was just looking over the results. One thing I noticed was how often family members are mentioned in topics, and how highly ranked such terms are in the project's corpus of Denver  Yelp reviews. This brought up the question, what is common among all the reviews, regardless of the food served? I wondered if I could create an enormous collection of food and family related stop words to get down to the most basic abstract quality of being a good review.
+<p>
+After a few attempts with LDA and TF-IDF to get at the heart of abstract goodness, I realized the task seemed impossible. Topic models and similarity measures are always going to find a difference between sushi and steak restaurants at almost every pass. It dawned on me I could use they same unsupervised topic analysis on each restaurant separately as its own corpus. I would lose similarity measures in general, but we could compare inter-restaurant topic distributions. This seemed novel in itself - and worth a try. Of course, we have a corpus problem for smaller restaurants and we'll have to drop out those with less than 150 or so.
+<p>
+Finally, we arrive at suitable question: Do well-rated restaurants have more concentrated, cohesive reviews? Or more specifically, are there fewer topics in a happy restaurant's reviews.
 
-# The process
-We're going to use unsupervised latent topic analysis. We are not giving hints or labels to our topic modeling algorithms.
 
 # The measurement
+Traditional topic modeling has a parameter problem -- at least for our quest. The hyperparameter of the number of topics is set before any modeling is done.
 
 # The recommendations
 
