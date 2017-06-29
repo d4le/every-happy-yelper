@@ -5,12 +5,13 @@ I have a bad habit of jumping to the 1-star reviews on Yelp, ignoring all the gl
 
 >"All happy families are alike; each unhappy family is unhappy in its own way" - Leo Tolstoy, _Anna Karenina_
 
-# From observation to objective
+
 <img src="images/tolstoy.png"><p>
+# From observation to objective
 With these observations in mind and Leo Tolstoy's guidance on happiness, can we predict a restaurant's Yelp rating from the number of topics in its reviews? Will happy restaurants have a more focused distribution of topics? And, conversely, will the unhappy restaurants be more diverse in their complaints and topics?
 <p><img src="images/restaurants.png">
 
-# The Data
+# The data
 Our data comes from once place - Denver, Colorado. Yelp, by policy, returns up to 1000 businesses per query and that's it. This should be enough if we supplement it with some shuttered restaurants for balance. In early June, 2017, our query of <a href="https://www.yelp.com/search?cflt=restaurants&find_loc=Denver%2C+CO">restaurants in Denver</a> returned 992 active restaurants. After removing those with less than 10 reviews, our total number from Yelp stood at 921. With 71 restaurants having less than 10 reviews, this seems like a pretty good clue we are nearing the end the list for Denver.
 
 <img src="images/restaurants-dist.png">
