@@ -104,8 +104,7 @@ We've discovered fast casual. Don't have a wait staff, don't offer delivery, jus
 
 4) The Gini coefficient
 - <a href="https://github.com/oliviaguest/gini">Olivia Guest's numpy version of Gini Coefficent</a>
-- <a href="http://www.investopedia.com/terms/g/gini-index.asp">What is the 'Gini Index'
-</a>
+- <a href="http://www.investopedia.com/terms/g/gini-index.asp">What is the 'Gini Index'</a>
 - <a href="http://peterrosenmai.com/lorenz-curve-graphing-tool-and-gini-coefficient-calculator">Lorenz curve graphing tool & Gini coefficient calculator</a> by Peter Rosenmai
 
 4) There are many references, articles and papers on the web discussing Yelp reviews seriously. I read many of them, here are a few that have contributed to my education and thoughts on the subject:
