@@ -50,7 +50,7 @@ I ran the first batch of cleaning, lemmatizing and modeling overnight on the rev
 <img src="images/aws.png">
 
 # Are happy pickles all alike?
-I had dataframes and gensim models <a href="https://radimrehurek.com/gensim/utils.html">pickled</a> by restaurant id sitting in a 8GB folder on my laptop (and on S3). This note on <a href="https://stackoverflow.com/a/44393919">getting distributions out the HDP</a> model on Stack Overflow was vital to my project. At this point, I didn't know if I had anything promising at all bottled up in the models. Perhaps all the distributions were flat, or all were equally unequal, and Tolstoy's wisdom only applied to families and not restaurants.
+I had dataframes and gensim models <a href="https://radimrehurek.com/gensim/utils.html">pickled</a> by restaurant id sitting in a 8GB folder on my laptop (and on S3). This thread on <a href="https://stackoverflow.com/a/44393919">getting distributions out the HDP</a> model on Stack Overflow was vital to my project. At this point, I didn't know if I had anything promising at all bottled up in the models. Perhaps all the distributions were flat, or all were equally unequal, and Tolstoy's wisdom only applied to families and not restaurants.
 
 # Visualizing the distributions
 To my relief the topic distributions did seem to show differentiation, at least comparing the best rated restaurants to the worst. This far into the project and this short on time, this was our gamble. If you're the skeptical type, yes, these are cherry-picked examples. Don't worry, we will chart them all in just a few paragraphs more.
