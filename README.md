@@ -1,6 +1,8 @@
 <img src="images/header.png">
+
 # Introduction
 I have a bad habit of jumping to the 1-star reviews on Yelp, ignoring all the glowing 5-star reviews. At first blush, most 1-star reviews seem to be the unique missives of extremely grumpy, easily offended persons who take to Yelp retributively. However, having read more than enough sour reviews over the years, I've realized this uniqueness characterizes 1-star reviews more than any other rating, regardless of the nature and history of the reviewer. I am often reminded of a famous quote from Leo Tolstoy:
+
 >"All happy families are alike; each unhappy family is unhappy in its own way" - Leo Tolstoy, _Anna Karenina_
 
 # From observation to objective
