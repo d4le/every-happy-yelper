@@ -58,7 +58,21 @@ To my relief the topic distributions did seem to show differentiation, at least 
 Again, time was short and the first ideas that popped into my over-strained, sleep-deprived brain was using an <a href="https://en.wikipedia.org/wiki/Income_inequality_metrics">income distribution measure</a> from economics, or the <a href="http://dni-institute.in/blogs/cart-decision-tree-gini-index-explained/">gini purity index</a> from random forests using a height distribution as the purity metric. The research was confusing, both measures pointed to the gini coefficient. It turns out they are similarly named, but quite different. I settled on economics. The gini coefficient from economics ranges from 0 to 1 with 0 being total equality, and 1 standing in for a world ruled entirely by <a href="http://time.com/money/4816165/jeff-bezos-mark-zuckerberg-bill-gates-net-worth-tech-stock-price/">Jeff Bezos, Mark Zuckerberg and Bill Gates</a>.
 <p><img src="images/gini.png"><p>
 I borrowed two income distribution graphs from Tomas Hellebrandt and Paolo Mauro's <a href="https://piie.com/publications/working-papers/future-worldwide-income-distribution">The Future of Worldwide Income Distribution</a> to make the visual explantation more obvious for <a href="https://datascience.stackexchange.com/questions/1095/gini-coefficient-vs-gini-impurity-decision-trees">Data Science Nerds</a> unfamiliar with econometrics.
-<p>
-#Let's plot this thing
-We have our reviews modeled, our topics distributed and our metric defined. Let's see the results. If you actually read this far, thanks!
-<p>
+
+# Let's plot this thing
+We have our reviews modeled, our topics distributed and our metric defined. Let's see the results. If you actually read this far, thanks.
+<p><img src="images/plot.png"><p>
+I've plotted the topic gini on the y-axis and vs the ratings of the restaurant on the x-axis. The vertical line down the center is the average 4 (3.94 ) stars. You can see in general, the higher the gini coefficient the more likely the restaurant is to be highly rated. There are some misses. And there is a whole lot of nothing going on at the bottom with the very low gini coefficients. For a novel approach to happiness, it seems Tolstoy may have been on to something.
+
+# What can we recommend to restaurant owners?
+Using some of our original topic analysis, I have some tips to keep happy customers all singing the same happy song for restaurants.
+<p><img src="images/coupons.png"><p>
+You can see that reviewers that mention coupons/groupons and other promotional topics are almost twice as likely to leave you a 1-star review. And almost half as likely to leave you a 5-star review. Don't offer coupons.
+<p><img src="images/delivery.png"><p>
+You can see that delivery is even worse. Here reviewers that mention delivery are almost 3 times as likely to leave you a 1-star review. And not nearly as likely to leave you a 5-star review. Don't offer delivery.
+<p><img src="images/wait.png"><p>
+You can see that reviewers that mention the wait staff are, again, almost twice as likely to leave you a 1-star review. And, likewise, not nearly as likely to leave you a 5-star review. Don't have a wait staff.
+
+# What have we done?
+
+We've discovered fast casual. Don't have a wait staff, don't offer delivery, just focus on food and make people wait in line.
