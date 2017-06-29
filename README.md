@@ -98,8 +98,7 @@ We've discovered fast casual. Don't have a wait staff, don't offer delivery, jus
 </a> by Brandon Rose
 - <a href="http://www.slidedeck.io/vinay631/GADS_prj">Automated Topic Detection and Social Recommendation using LDA</a> by Vinay Manda
 - <a href="https://www.quora.com/What-would-be-considered-the-least-number-of-documents-for-training-an-LDA-SLDA-topic-model-Is-a-corpus-of-200-documents-large-enough">Quora: What would be considered the least number of documents for training an LDA/SLDA topic model?</a>
-- <a href="https://nbviewer.jupyter.org/github/dsquareindia/gensim/blob/280375fe14adea67ce6384ba7eabf362b05e6029/docs/notebooks/topic_coherence_tutorial.ipynb#topic=0&lambda=0.36&term=">Demonstration of the topic coherence pipeline in Gensim
-</a>
+- <a href="https://nbviewer.jupyter.org/github/dsquareindia/gensim/blob/280375fe14adea67ce6384ba7eabf362b05e6029/docs/notebooks/topic_coherence_tutorial.ipynb#topic=0&lambda=0.36&term=">Demonstration of the topic coherence pipeline in Gensim</a>
 - <a href="http://graus.co/thesis/string-similarity-with-tfidf-and-python/">Computing string similarity with TF-IDF and Python</a> by David Graus
 
 4) The Gini coefficient
