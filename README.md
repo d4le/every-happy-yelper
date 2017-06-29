@@ -81,17 +81,19 @@ You can see that reviewers that mention the wait staff are, again, almost twice 
 We've discovered fast casual. Don't have a wait staff, don't offer delivery, just focus on food and make people wait in line.
 
 # References and credits
-1) This NLP portion of this project would not have happened without the <a href="https://radimrehurek.com/gensim/">Gensim website</a>, <a href="https://groups.google.com/forum/#!forum/gensim">Gensim Google group</a> and stackoverflow's <a href="https://stackoverflow.com/questions/tagged/gensim">Gensim users</a>. The NLTK package was indispensable.
+#### 1) NLP with Gensim and NLTK
+This NLP portion of this project would not have happened without the <a href="https://radimrehurek.com/gensim/">Gensim website</a>, <a href="https://groups.google.com/forum/#!forum/gensim">Gensim Google group</a> and stackoverflow's <a href="https://stackoverflow.com/questions/tagged/gensim">Gensim users</a>. The NLTK package was indispensable.
 
-2) The instructors at Galvanize DSI <a href="https://www.linkedin.com/in/adam-richards-89146783/">Dr. Adam Richards</a> and <a href="https://www.linkedin.com/in/frankburkholder/">Dr. Frank Burkholder</a> provided mentorship and support. Not to mention two great DSRs, <a href="https://www.linkedin.com/in/steve-iannaccone/">Steve Iannaccone</a> and <a href="https://www.linkedin.com/in/brent-lemieux/">Brent Lemieux</a>
+#### 2) Galvanize DSI
+ The instructors at Galvanize DSI <a href="https://www.linkedin.com/in/adam-richards-89146783/">Dr. Adam Richards</a> and <a href="https://www.linkedin.com/in/frankburkholder/">Dr. Frank Burkholder</a> provided mentorship and support. Not to mention two great DSRs, <a href="https://www.linkedin.com/in/steve-iannaccone/">Steve Iannaccone</a> and <a href="https://www.linkedin.com/in/brent-lemieux/">Brent Lemieux</a>
 
-3a) Hierarchical Dirichlet Processes (HDP)
+#### 3a) Hierarchical Dirichlet Processes (HDP)
 - The original HDP paper by  Yee Whye Teh, Michael I Jordan, Matthew J Beal: <a href="https://people.eecs.berkeley.edu/~jordan/papers/hdp.pdf">Hierarchical Dirichlet Processes</a>
 - <a href="http://qwone.com/~jason/trg/papers/blei-chinese-04.pdf">Hierarchical Topic Models and the Nested Chinese Restaurant Process</a> by David M. Blei, Thomas L. Griffiths,  Michael I. Jordan and Joshua B. Tenenbaum
 - <a href="http://mlg.eng.cam.ac.uk/tutorials/07/ywt.pdf">A Tutorial on Dirichlet Processes and Hierarchical Dirichlet Processes</a> by Yee Whye Teh
 - <a href="https://stackoverflow.com/questions/31543542/hierarchical-dirichlet-process-gensim-topic-number-independent-of-corpus-size">Hierarchical Dirichlet Process Gensim topic number independent of corpus size</a> on Stack Overflow
 
-3b) Other topic modeling resources that have been of help:
+#### 3b) Other topic modeling resources:
 - <a href="http://sujitpal.blogspot.com/2014/08/topic-modeling-with-gensim-over-past.html">Topic Modeling with gensim</a> by Sujit Pal
 - <a href="https://lists.cs.princeton.edu/pipermail/topic-models/2013-November/002595.html">Joan-Josep Vallbé's workflow</a>
 - <a href="http://brandonrose.org/clustering">Document Clustering with Python
@@ -101,12 +103,13 @@ We've discovered fast casual. Don't have a wait staff, don't offer delivery, jus
 - <a href="https://nbviewer.jupyter.org/github/dsquareindia/gensim/blob/280375fe14adea67ce6384ba7eabf362b05e6029/docs/notebooks/topic_coherence_tutorial.ipynb#topic=0&lambda=0.36&term=">Demonstration of the topic coherence pipeline in Gensim</a>
 - <a href="http://graus.co/thesis/string-similarity-with-tfidf-and-python/">Computing string similarity with TF-IDF and Python</a> by David Graus
 
-4) The Gini coefficient
+#### 4) The Gini coefficient
 - <a href="https://github.com/oliviaguest/gini">Olivia Guest's numpy version of Gini Coefficent</a>
 - <a href="http://www.investopedia.com/terms/g/gini-index.asp">What is the 'Gini Index'</a>
 - <a href="http://peterrosenmai.com/lorenz-curve-graphing-tool-and-gini-coefficient-calculator">Lorenz curve graphing tool & Gini coefficient calculator</a> by Peter Rosenmai
 
-4) There are many references, articles and papers on the web discussing Yelp reviews seriously. I read many of them, here are a few that have contributed to my education and thoughts on the subject:
+#### 5) Yelp!
+There are many references, articles and papers on the web discussing Yelp reviews seriously. I read many of them, here are a few that have contributed to my education and thoughts on the subject:
 - <a href="https://arxiv.org/abs/1109.1530">Daily Deals: Prediction, Social Diffusion, and Reputational Ramifications</a> by ohn W. Byers, Michael Mitzenmacher, Georgios Zervas
 - <a href="https://rpubs.com/jmejia/grouponeffect">Finding the Groupon Effect in our data set</a> by Jorge Mejia
 - <a href="http://www.hbs.edu/faculty/Pages/item.aspx?num=41233">Reviews, Reputation, and Revenue: The Case of Yelp.com</a> by Michael Luca
