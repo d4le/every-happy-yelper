@@ -7,7 +7,7 @@ I have a bad habit of jumping to the 1-star reviews on Yelp, ignoring all the gl
 
 # From observation to objective
 <img src="images/tolstoy.png"><p>
-With these observations in mind and Leo Tolstoy's guidance on happiness, can we predict a restaurant's Yelp rating from the number of topics in its reviews? Will happy restaurants have a more focused-distribution of topics? And, conversely, will the unhappy restaurants be more diverse in their complaints and topics?
+With these observations in mind and Leo Tolstoy's guidance on happiness, can we predict a restaurant's Yelp rating from the number of topics in its reviews? Will happy restaurants have a more focused distribution of topics? And, conversely, will the unhappy restaurants be more diverse in their complaints and topics?
 <p><img src="images/restaurants.png">
 
 # The Data
