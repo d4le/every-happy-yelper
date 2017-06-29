@@ -42,7 +42,7 @@ Traditional topic modeling has a parameter problem -- at least for our quest. Th
 # The batch processing
 I ran the first batch of cleaning, lemmatizing and modeling overnight on the reviews on my trusty 2015 MacBook Air expecting to find the process finished like my initial LDA model when I ran it on the entire body of reviews. I woke to find 8 restaurants had been processed, a few thousand reviews in total. With such slow progress I experimented with pooling on the NLTK lemmatizer, it did seem to be a few seconds faster. But this was going to take a month on the MacBook Air.
 
- <p>AWS to the rescue. Time was already running short, I quickly benchmarked several variants of AWS machines, the t2.large's did as well on my test as bigger instances that cost twice as much. But choosing the t2.larges was a rookie mistake. I didn't know it at the time, but the t2s are "Burstable Performance" instances whose computational power rapidly gets spent in continuous processing tasks of NLP. My benchmark of 100 reviews per 300 seconds standard turned into 900 seconds on the t2s under full load! My overnight run on 8 instances was a bust as well.
+ <p>AWS to the rescue. Time was already running short, I quickly benchmarked several variants of AWS machines, the t2.large's did as well on my test as bigger instances that cost twice as much. But choosing the t2.larges was a rookie mistake. I didn't know it at the time, but the t2s are "Burstable Performance" instances whose allotted computational power rapidly gets spent in the first 5-10 minutes of processing tasks for NLP and hobble along thereafter. My benchmark of 100 reviews per 300 seconds standard turned into 900 seconds on the t2s under full load! My overnight run on 8 aws instances was a bust as well.
 
 <p>I went back to the old benchmarks and found that the m4.2xlarge preformed best for the buck, now excluding the t2s. Time was running really short on the project's deadline now. Far too short to even devise a queue system and brush up my Spark or Mr. Job. I did the only mathematical thing I could think of: I divided the tasks across the instances by taking the restaurant name mod 20, letting each instance numbered 0-19 take the restaurants whose name matched mod 20 its assigned number. Late at night, well past bedtime, the instances ran under my watchful eye. The pandas' dataframes and Gensim models were pickled restaurant by restaurant and sync'd via S3 command line tools on each instance. I could have gone to sleep, but I had no script to shut down each instance when it was done. The fear of over-sleeping for 12 hours and waking to a huge bill keep me awake.  In total it took about 6 hours, 100+ ecu hours, less than $200<p>
 <img src="images/aws.png">
@@ -65,7 +65,7 @@ We have our reviews modeled, our topics distributed and our metric defined. Let'
 I've plotted the topic gini on the y-axis and vs the ratings of the restaurant on the x-axis. The vertical line down the center is the average 4 (3.94 ) stars. You can see in general, the higher the gini coefficient the more likely the restaurant is to be highly rated. There are some misses. And there is a whole lot of nothing going on at the bottom with the very low gini coefficients. For a novel approach to happiness, it seems Tolstoy may have been on to something.
 
 # What can we recommend to restaurant owners?
-Using some of our original topic analysis, I have some tips to keep happy customers all singing the same happy song for restaurants.
+Using some of our original topic analysis, can we come up with some tips to keep happy customers all singing the same happy song for restaurants.
 <p><img src="images/coupons.png"><p>
 You can see that reviewers that mention coupons/groupons and other promotional topics are almost twice as likely to leave you a 1-star review. And almost half as likely to leave you a 5-star review. Don't offer coupons.
 <p><img src="images/delivery.png"><p>
@@ -76,3 +76,37 @@ You can see that reviewers that mention the wait staff are, again, almost twice 
 # What have we done?
 
 We've discovered fast casual. Don't have a wait staff, don't offer delivery, just focus on food and make people wait in line.
+
+# References and credits
+1) This NLP portion of this project would not have happened without the <a href="https://radimrehurek.com/gensim/">Gensim website</a>, <a href="https://groups.google.com/forum/#!forum/gensim">Gensim Google group</a> and stackoverflow's <a href="https://stackoverflow.com/questions/tagged/gensim">Gensim users</a>. The NLTK package was indispensable.
+
+2) The instructors at Galvanize DSI <a href="https://www.linkedin.com/in/adam-richards-89146783/">Dr. Adam Richards</a> and <a href="https://www.linkedin.com/in/frankburkholder/">Dr. Frank Burkholder</a> provided mentorship and support. Not to mention two great DSRs, <a href="https://www.linkedin.com/in/steve-iannaccone/">Steve Iannaccone</a> and <a href="https://www.linkedin.com/in/brent-lemieux/">Brent Lemieux</a>
+
+3a) Hierarchical Dirichlet Processes (HDP)
+- The original HDP paper by  Yee Whye Teh, Michael I Jordan, Matthew J Beal: <a href="https://people.eecs.berkeley.edu/~jordan/papers/hdp.pdf">Hierarchical Dirichlet Processes</a>
+- <a href="http://qwone.com/~jason/trg/papers/blei-chinese-04.pdf">Hierarchical Topic Models and the Nested Chinese Restaurant Process</a> by David M. Blei, Thomas L. Griffiths,  Michael I. Jordan and Joshua B. Tenenbaum
+- <a href="http://mlg.eng.cam.ac.uk/tutorials/07/ywt.pdf">A Tutorial on Dirichlet Processes and Hierarchical Dirichlet Processes</a> by Yee Whye Teh
+- <a href="https://stackoverflow.com/questions/31543542/hierarchical-dirichlet-process-gensim-topic-number-independent-of-corpus-size">Hierarchical Dirichlet Process Gensim topic number independent of corpus size</a> on Stack Overflow
+
+3b) Other topic modeling resources that have been of help:
+- <a href="http://sujitpal.blogspot.com/2014/08/topic-modeling-with-gensim-over-past.html">Topic Modeling with gensim</a> by Sujit Pal
+- <a href="https://lists.cs.princeton.edu/pipermail/topic-models/2013-November/002595.html">Joan-Josep Vallbé's workflow</a>
+- <a href="http://brandonrose.org/clustering">Document Clustering with Python
+</a> by Brandon Rose
+- <a href="http://www.slidedeck.io/vinay631/GADS_prj">Automated Topic Detection and Social Recommendation using LDA</a> by Vinay Manda
+- <a href="https://www.quora.com/What-would-be-considered-the-least-number-of-documents-for-training-an-LDA-SLDA-topic-model-Is-a-corpus-of-200-documents-large-enough">Quora: What would be considered the least number of documents for training an LDA/SLDA topic model?</a>
+- <a href="https://nbviewer.jupyter.org/github/dsquareindia/gensim/blob/280375fe14adea67ce6384ba7eabf362b05e6029/docs/notebooks/topic_coherence_tutorial.ipynb#topic=0&lambda=0.36&term=">Demonstration of the topic coherence pipeline in Gensim
+</a>
+- <a href="http://graus.co/thesis/string-similarity-with-tfidf-and-python/">Computing string similarity with TF-IDF and Python</a> by David Graus
+
+4) The Gini coefficient
+- <a href="https://github.com/oliviaguest/gini">Olivia Guest's numpy version of Gini Coefficent</a>
+- <a href="http://www.investopedia.com/terms/g/gini-index.asp">What is the 'Gini Index'
+</a>
+
+4) There are many references, articles and papers on the web discussing Yelp reviews seriously. I read many of them, here are a few that have contributed to my education and thoughts on the subject:
+- <a href="https://arxiv.org/abs/1109.1530">Daily Deals: Prediction, Social Diffusion, and Reputational Ramifications</a> by ohn W. Byers, Michael Mitzenmacher, Georgios Zervas
+- <a href="https://rpubs.com/jmejia/grouponeffect">Finding the Groupon Effect in our data set</a> by Jorge Mejia
+- <a href="http://www.hbs.edu/faculty/Pages/item.aspx?num=41233">Reviews, Reputation, and Revenue: The Case of Yelp.com</a> by Michael Luca
+- <a href="https://districtdatalabs.silvrback.com/computing-a-bayesian-estimate-of-star-rating-means">Computing a Bayesian Estimate of Star Rating Means
+</a> by Benjamin Bengfort
